@@ -52,7 +52,11 @@
         <div class="todo-app">
             <h2>Text to Speech<img src="images/texttospeech.png" alt="Speech Icon"></h2>
             <div class="text-section">
-                <textarea id="text-input" placeholder="Enter text to read..."></textarea>
+                <textarea id="text-input" placeholder="Enter text to read or summarize..."></textarea>
+            </div>
+            <div class="summary-output">
+                <h2>Summary</h2>
+                <div id="summary-output" class="output-box" placeholder="Summary will appear here "></div>
             </div>
 
             <div class="controls-section">
@@ -72,9 +76,14 @@
                 <div class="button-group">
                     <button id="speak" class="action-button">Speak</button>
                     <button id="stop" class="action-button">Stop</button>
+                    <button id="summarize" class="action-button">Summarize</button>
                 </div>
             </div>
+            <br>
+            
         </div>
+
+        
     </div>
 
     <script src="popup.js"></script>
