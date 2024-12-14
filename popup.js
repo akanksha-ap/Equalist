@@ -1,48 +1,3 @@
-// Speech Synthesis Section
-const textInput = document.getElementById("text-input");
-const voicesSelect = document.getElementById("voices");
-const rateInput = document.getElementById("rate");
-const speakButton = document.getElementById("speak");
-const stopButton = document.getElementById("stop");
-
-let voices = [];
-const synth = window.speechSynthesis;
-
-// Load available voices
-function loadVoices() {
-  voices = synth.getVoices();
-  voicesSelect.innerHTML = voices
-    .map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`)
-    .join("");
-}
-
-// Speak text
-function speakText() {
-  const text = textInput.value;
-  if (text.trim() === "") return;
-
-  const utterance = new SpeechSynthesisUtterance(text);
-  const selectedVoice = voices.find(voice => voice.name === voicesSelect.value);
-  utterance.voice = selectedVoice;
-  utterance.rate = rateInput.value;
-
-  synth.speak(utterance);
-}
-
-// Stop speaking
-function stopSpeaking() {
-  synth.cancel();
-}
-
-// Event listeners for Speech Synthesis
-speakButton.addEventListener("click", speakText);
-stopButton.addEventListener("click", stopSpeaking);
-
-// Populate voices when available
-synth.onvoiceschanged = loadVoices;
-loadVoices();
-
-// VisionAid Settings Section
 document.getElementById("textSize").addEventListener("input", () => {
   const textSize = document.getElementById("textSize").value;
 
@@ -98,7 +53,7 @@ function applyOtherSettings(highContrast, darkMode, colorBlindMode) {
     document.head.appendChild(styleElement);
   }
 
-  let css = "";
+  let css = ``;
 
   if (highContrast) {
     css += `
@@ -150,3 +105,86 @@ function applyOtherSettings(highContrast, darkMode, colorBlindMode) {
 
   styleElement.textContent = css;
 }
+
+// Speech Synthesis Section
+const textInput = document.getElementById("text-input");
+const voicesSelect = document.getElementById("voices");
+const rateInput = document.getElementById("rate");
+const speakButton = document.getElementById("speak");
+const stopButton = document.getElementById("stop");
+const summarizeButton = document.getElementById("summarize"); // Added summarize button
+const summaryOutput = document.getElementById("summary-output"); // Added output element for summary
+
+let voices = [];
+const synth = window.speechSynthesis;
+
+// Load available voices
+function loadVoices() {
+    voices = synth.getVoices();
+    voicesSelect.innerHTML = voices
+        .map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`)
+        .join("");
+}
+
+// Speak text
+function speakText() {
+    const text = textInput.value;
+    if (text.trim() === "") return;
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    const selectedVoice = voices.find(voice => voice.name === voicesSelect.value);
+    utterance.voice = selectedVoice;
+    utterance.rate = rateInput.value;
+
+    synth.speak(utterance);
+}
+
+// Stop speaking
+function stopSpeaking() {
+    synth.cancel();
+}
+
+// Summarize text by calling the Python backend
+async function summarizeText() {
+    const text = textInput.value;
+    if (text.trim() === "") {
+        summaryOutput.textContent = "Please enter some text to summarize.";
+        return;
+    }
+
+    try {
+        console.log("Sending request to backend...");
+        const response = await fetch("http://127.0.0.1:5000/summarize", { // Updated port to 5000
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ text: text }),
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error("Error from backend:", errorData.error);
+            summaryOutput.textContent = `Error: ${errorData.error}`;
+            return;
+        }
+
+        const data = await response.json();
+        console.log("Summary response:", data);
+        summaryOutput.textContent = data.summary || "No summary available.";
+    } catch (error) {
+        console.error("Error summarizing text:", error);
+        summaryOutput.textContent = "Network error. Please ensure the backend is running.";
+    }
+}
+
+// Event listeners for Speech Synthesis
+speakButton.addEventListener("click", speakText);
+stopButton.addEventListener("click", stopSpeaking);
+
+// Event listener for Summarization
+summarizeButton.addEventListener("click", summarizeText);
+
+// Populate voices when available
+synth.onvoiceschanged = loadVoices;
+loadVoices();
