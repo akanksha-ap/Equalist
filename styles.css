@@ -1,0 +1,271 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 25%);
+  background-repeat: repeat;
+  min-height: 100%;
+  min-width: 610px;
+  width: 100%;
+  height: 60vh;
+}
+
+.container {
+  width: 100%;
+  height: 60vh;
+  min-width: 610px;
+  padding: 10px;
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+body {
+  overflow: hidden;
+}
+
+/* Title Section */
+.title {
+  max-width: 540px;
+  background: #ffffff;
+  margin: 0 auto;
+  padding: 20px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title h1 {
+  color: #002765;
+  display: flex;
+  align-items: center;
+}
+
+.title h1 img {
+  width: 40px;
+  margin-left: 10px;
+}
+
+/* Accessibility Settings */
+.vision-aid-settings {
+  max-width: 540px;
+  background: #ffffff;
+  margin: 10px auto 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.vision-aid-settings h2 {
+  color: #002765;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  color: #002765;
+  font-weight: 600;
+}
+
+.input-group input[type="range"] {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #edeef0;
+}
+
+button#applySettings {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #002765;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button#applySettings:hover {
+  background: #001f4f;
+}
+
+/* Todo App */
+.todo-app {
+  width: 100%;
+  max-width: 540px;
+  background: #ffffff;
+  margin: 10px auto 20px;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo-app h2 {
+  color: #002765;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.todo-app h2 img {
+  width: 30px;
+  margin-left: 10px;
+}
+
+.text-section textarea#text-input {
+  width: 100%;
+  min-height: 100px;
+  border: none;
+  outline: none;
+  background: #edeef0;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  resize: vertical;
+}
+
+.controls-section {
+  margin-top: 20px;
+}
+
+.controls-section label {
+  color: #002765;
+  margin-right: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  background: #edeef0;
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin-bottom: 25px;
+}
+
+input[type="range"] {
+  flex: 1;
+  margin: 0 10px;
+}
+
+#rate-display {
+  min-width: 30px;
+  color: #002765;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.action-button {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+  background: #ff5945;
+  color: #ffffff;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.action-button:hover {
+  background: #ff4331;
+}
+
+#stop {
+  background: #002765;
+}
+
+#stop:hover {
+  background: #001f4f;
+}
+
+/* High Contrast Mode */
+body.high-contrast {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+body.high-contrast .title,
+body.high-contrast .vision-aid-settings,
+body.high-contrast .todo-app {
+  background: #1a1a1a;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .title,
+body.dark-mode .vision-aid-settings,
+body.dark-mode .todo-app {
+  background: #1e1e1e;
+  color: #ffffff;
+}
+
+/* Colorblind Mode Adjustments */
+body.colorblind-deuteranopia {
+  filter: url("#deuteranopia");
+}
+
+body.colorblind-protanopia {
+  filter: url("#protanopia");
+}
+
+body.colorblind-tritanopia {
+  filter: url("#tritanopia");
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.high-contrast {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #ffff00;
+}
+
+.title.dark-mode, .todo-app.dark-mode {
+  background: #1e1e1e;
+}
+
+.title.high-contrast, .todo-app.high-contrast {
+  background: #000;
+  color: #fff;
+}

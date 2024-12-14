@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision Aid and Ease</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Title Section -->
+        <div class="title">
+            <h1>Equalist<img src="images/visionease.png" alt="Vision Ease Icon"></h1>
+        </div>
+
+        <!-- VisionAid Settings -->
+        <div class="vision-aid-settings">
+            <h2>Accessibility Settings</h2>
+            <div class="input-group">
+                <label for="textSize">Text Size:</label>
+                <input type="range" id="textSize" min="100" max="110" value="100">
+            </div>
+
+            <div class="input-group">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="contrast">
+                    <label for="contrast">High Contrast</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="darkMode">
+                    <label for="darkMode">Dark Mode</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="colorBlindMode">Colorblind Mode:</label>
+                <select id="colorBlindMode">
+                    <option value="none">None</option>
+                    <option value="deuteranopia">Deuteranopia (Green Weak)</option>
+                    <option value="protanopia">Protanopia (Red Weak)</option>
+                    <option value="tritanopia">Tritanopia (Blue Weak)</option>
+                </select>
+            </div>
+
+            <button id="applySettings">Apply</button>
+        </div>
+
+        <!-- Vision Ease Features -->
+        <div class="todo-app">
+            <h2>Text to Speech<img src="images/texttospeech.png" alt="Speech Icon"></h2>
+            <div class="text-section">
+                <textarea id="text-input" placeholder="Enter text to read..."></textarea>
+            </div>
+
+            <div class="controls-section">
+                <h2>Voice Settings<img src="images/voicesettings1.png" alt="Settings Icon"></h2>
+                <div class="row">
+                    <select id="voices">
+                        <option value="">Select Voice</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <label for="rate">Speech Rate:</label>
+                    <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1">
+                    <span id="rate-display">1x</span>
+                </div>
+
+                <div class="button-group">
+                    <button id="speak" class="action-button">Speak</button>
+                    <button id="stop" class="action-button">Stop</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
