@@ -269,3 +269,18 @@ body.high-contrast {
   background: #000;
   color: #fff;
 }
+#summary-container {
+  margin-top: 20px;
+}
+
+#summary-output {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #edeef0;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  resize: vertical;
+  color: #002765;
+}
