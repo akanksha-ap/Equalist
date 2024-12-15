@@ -27,7 +27,7 @@ body::-webkit-scrollbar {
 }
 
 body {
-  overflow: hidden;
+  overflow: auto;
 }
 
 /* Title Section */
