@@ -10,7 +10,7 @@
     <div class="container">
         <!-- Title Section -->
         <div class="title">
-            <h1>Equalist<img src="images/visionease.png" alt="Vision Ease Icon"></h1>
+            <h1>Equalist<img src="./images/flogo.png" alt="Vision Ease Icon"></h1>
         </div>
         <!-- VisionAid Settings -->
         <div class="vision-aid-settings">
@@ -47,7 +47,7 @@
             <button id="applySettings">Apply</button>
         </div>
         <div class="todo-app">
-            <h2>Audio Based<img src="images/texttospeech.png" alt="Speech Icon"></h2> 
+            <h2>Audio Based<img src="images/texttospeech-removebg-preview.png" alt="Speech Icon"></h2> 
             <div class="text-section">
                 <textarea id="text-input" placeholder="Enter text to read or summarize..."></textarea>
             </div>
@@ -57,7 +57,7 @@
             </div>
 
             <div class="controls-section">
-                <h2>Voice Settings<img src="images/voicesettings1.png" alt="Settings Icon"></h2>
+                <h2>Voice Settings<img src="images/voicesettings1-removebg-preview.png" alt="Settings Icon"></h2>
                 <div class="row">
                     <select id="voices">
                         <option value="">Select Voice</option>
@@ -78,53 +78,52 @@
             </div>
             <br>       
         </div>
-    <div class="language-based">
-        <h2>Language Based</h2>
-        <div class="options">
-            <button id="signLanguage" class="option-button">Sign Language</button>
-            <button id="multilingual" class="option-button">Multilingual</button>
-        </div>
-    </div>
+        <div class="language-based">
+            <h2>Language Based</h2>
+            <div class="options">
+                <button id="signLanguage" class="option-button">Sign Language</button>
+                <button id="multilingual" class="option-button">Multilingual</button>
+            </div>
+        
+            <!-- Sign Language Section (initially hidden) -->
+            <div id="signLanguageSection" style="display: none;">
+                <h1>Sign Language</h1>
+                <div>
+                    <button id="extractText">Translate Selected Text</button>
+                    <textarea id="extractedText" placeholder="Selected text will appear here" readonly></textarea>
+                </div>
+                <div id="signLanguageDisplay">
+                    <h3>Sign Language Translation</h3>
+                    <div id="avtar"></div>
+                </div>
+            </div>
 
-    <!-- Sign Language Section (initially hidden) -->
-    <div id="signLanguageSection" style="display: none;">
-        <h1>Sign Language</h1>
-        <div>
-            <button id="extractText">Translate Selected Text</button>
-            <textarea id="extractedText" placeholder="Selected text will appear here" readonly></textarea>
+            <!-- Multilingual Section (initially hidden) -->
+            <div id="multilingualSection" style="display: none;">
+                <h1>Multilingual</h1>
+                <div>
+                    <button id="translateText">Translate Text</button>
+                    <textarea id="translatedText" placeholder="Translated text will appear here" readonly></textarea>
+            </div>
+            <div>
+                <label for="targetLanguage">Target Language:</label>
+                <select id="targetLanguage">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="it">Italian</option>
+                    <option value="ja">Japanese</option>
+                    <option value="ko">Korean</option>
+                    <option value="zh">Chinese</option>
+                    <!-- Add more languages as needed -->
+                </select>
+            </div>
+            <div id="multilingualDisplay">
+                <h3>Translated Text</h3>
+                <div id="translatedText"></div>
+            </div>
         </div>
-        <div id="signLanguageDisplay">
-            <h3>Sign Language Translation</h3>
-            <div id="avatar"></div>
-        </div>
-    </div>
-
-    <!-- Multilingual Section (initially hidden) -->
-    <div id="multilingualSection" style="display: none;">
-        <h1>Multilingual Translation</h1>
-        <div>
-            <button id="extractTextForTranslate">Translate Selected Text</button>
-            <textarea id="extractedTextForTranslate" placeholder="Selected text will appear here" readonly></textarea>
-        </div>
-        <div>
-            <label for="targetLanguage">Target Language:</label>
-            <select id="targetLanguage">
-                <option value="en">English</option>
-                <option value="es">Spanish</option>
-                <option value="fr">French</option>
-                <option value="de">German</option>
-                <option value="it">Italian</option>
-                <option value="ja">Japanese</option>
-                <option value="ko">Korean</option>
-                <option value="zh">Chinese</option>
-                <!-- Add more languages as needed -->
-            </select>
-        </div>
-        <div id="multilingualDisplay">
-            <h3>Translated Text</h3>
-            <div id="translatedText"></div>
-        </div>
-    </div>
 
     </div>
 

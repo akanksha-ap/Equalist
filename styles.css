@@ -9,10 +9,10 @@
 html {
   background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 25%);
   background-repeat: repeat;
-  min-height: 100%;
+  /* min-height: 100%; */
   min-width: 610px;
   width: 100%;
-  height: 60vh;
+  height: 100vh;
 }
 
 .container {
@@ -105,7 +105,7 @@ button#applySettings {
   background: #002765;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 40px;
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s ease;
@@ -114,6 +114,7 @@ button#applySettings {
 button#applySettings:hover {
   background: #001f4f;
 }
+
 
 /* Todo App */
 .todo-app {
@@ -283,4 +284,118 @@ body.high-contrast {
   font-size: 14px;
   resize: vertical;
   color: #002765;
+}
+
+.language-based {
+  max-width: 540px;
+  margin: 10px auto 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.language-based h2 {
+  color: #002765;
+  margin-bottom: 20px;
+}
+
+.language-based .input-group {
+  margin-bottom: 15px;
+}
+
+.language-based .input-group label {
+  color: #002765;
+  font-weight: 600;
+}
+
+.language-based .input-group input[type="range"] {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.language-based .checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.language-based .options {
+  margin-bottom: 20px;
+}
+
+.language-based .option-button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 40px;
+  background-color: #002765;
+  color: white;
+  cursor: pointer;
+}
+
+.language-based .option-button:hover {
+  background-color: #002e79;
+}
+
+.language-based #signLanguageSection,
+.language-based #multilingualSection {
+  margin-top: 20px;
+}
+
+.language-based #signLanguageSection h1,
+.language-based #multilingualSection h1 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.language-based #signLanguageSection textarea,
+.language-based #multilingualSection textarea {
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.language-based #signLanguageDisplay,
+.language-based #multilingualDisplay {
+  margin-top: 20px;
+}
+
+.language-based #signLanguageDisplay h3,
+.language-based #multilingualDisplay h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+#extractText {
+  background-color: #28A745;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#extractText:hover {
+  background-color: #218838;
+  box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+}
+
+#translateText {
+  background-color: #28A745;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#translateText:hover {
+  background-color: #218838;
+  box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
 }
